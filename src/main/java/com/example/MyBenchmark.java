@@ -1,6 +1,7 @@
 package com.example;
 
 import org.openjdk.jmh.annotations.*;
+import org.openjdk.jmh.infra.Blackhole;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -31,4 +32,13 @@ public class MyBenchmark {
         }
         return list;
     }
+
+    @Benchmark
+    public void BlackholeTest(Blackhole blackhole) {
+        int a = 1;
+        int b = 2;
+        int sum = a + b;
+        blackhole.consume(sum);
+    }
+
 }
