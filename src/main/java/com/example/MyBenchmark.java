@@ -11,7 +11,7 @@ import java.util.concurrent.TimeUnit;
 
 public class MyBenchmark {
     static final int COUNT = 10000;
-    @BenchmarkMode(Mode.Throughput) @OutputTimeUnit(TimeUnit.MINUTES)
+    @BenchmarkMode(Mode.Throughput) @OutputTimeUnit(TimeUnit.NANOSECONDS)
     public List<Boolean> testFillEmptyList() {
         List<Boolean> list = new ArrayList<>();
         for (int i=0;i<COUNT;i++) {
